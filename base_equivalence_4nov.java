@@ -24,7 +24,7 @@ class GFG {
 class Solution {
     String baseEquiv(int n, int m) {
         // code here
-        for (int i = 0; i <= 32; i++) {
+        for (int i = 2; i <= 32; i++) {
             // logi (n)=log10 (n)/logn10 (i)
             int num = ((int) (Math.log10(n) / Math.log10(i))) + 1; // to get number of digits we can use log
 
