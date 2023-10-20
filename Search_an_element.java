@@ -1,31 +1,50 @@
 //{ Driver Code Starts
-//Initial Template for Java
-
-import java.io.*;
 import java.util.*;
+import java.io.*;
+import java.lang.*;
 
-class GFG {
-    public static void main(String args[]) throws IOException {
-        BufferedReader read =
-            new BufferedReader(new InputStreamReader(System.in));
+class Main
+{
+    public static void main(String args[])throws IOException
+    {
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         int t = Integer.parseInt(read.readLine());
-        while (t-- > 0) {
-            Long N = Long.parseLong(read.readLine());
-
-            Solution ob = new Solution();
-            System.out.println(ob.squaresInChessBoard(N));
+        
+        while(t-- > 0)
+        {
+            int sizeOfArray = Integer.parseInt(read.readLine());
+            int arr[] = new int[sizeOfArray];
+            
+            String st[] = read.readLine().trim().split("\\s+");
+            for(int i = 0; i < sizeOfArray; i++)
+              arr[i] = Integer.parseInt(st[i]);
+              
+            int x = Integer.parseInt(read.readLine());
+            
+            Solution obj = new Solution();
+            
+            System.out.println(obj.search(arr, sizeOfArray, x));
         }
     }
 }
 // } Driver Code Ends
 
 
-//User function Template for Java
-
-class Solution {
-    static Long squaresInChessBoard(Long n) {
-        // code here
-        return (n*(n+1)*((2*n)+1))/6;
+class Solution{
+        
+    static int search(int arr[], int N, int X)
+    {
+        
+        // Your code here
+       for(int x=0;x<N;x++)
+       {
+           if(arr[x]==X)
+           {
+               return x;
+           }
+       }
+       return -1;
         
     }
-};
+    
+}
